@@ -17,8 +17,8 @@
   <script src="https://apis.google.com/js/api.js"></script>
   <script>
     var CLIENT_ID = '380805225705-tiuvdfl90mgbaeqf2bjsbpmllq4g2vp2.apps.googleusercontent.com';
-    var API_KEY = 'AIzaSyBIKmQGgx0FCU7584bDezfvv2szva4kx_Y';
-    var FOLDER_ID = '14p19P7CfqSu4ute1-hdWlIqViGMbWGKY?usp=sharing';
+    var API_KEY = 'AIzaSyBIKmQGgx0FCU7584bDezfvv2szva4kx_Y'; // Replace with your API key
+    var FOLDER_ID = '14p19P7CfqSu4ute1-hdWlIqViGMbWGKY';
 
     var DISCOVERY_DOCS = ["https://www.googleapis.com/discovery/v1/apis/drive/v3/rest"];
     var SCOPES = 'https://www.googleapis.com/auth/drive.readonly';
@@ -65,6 +65,8 @@
       if (fileId) {
         var audioFileURL = 'https://drive.google.com/uc?export=download&id=' + fileId;
         audioPlayer.src = audioFileURL;
+        audioPlayer.load();
+        audioPlayer.play();
       } else {
         audioPlayer.src = '';
       }
